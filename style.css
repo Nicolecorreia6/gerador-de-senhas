@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+:root {
+    --branco: #ffffff;
+    --cor-de-fundo: linear-gradient(135deg, #001124 0%, #00162E 100%);
+    --fundo-senha: #000000;
+    --fundo-texto: rgba(0, 30, 64, 0.6); /* Efeito semi-transparente */
+    --borda: #c2cad3;
+    --borda-hover: #00ddff;
+    --roboto: 'Roboto', sans-serif;
+    --roboto-mono: 'Roboto Mono', monospace;
+    --sombra: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--branco);
+    background: var(--cor-de-fundo);
+    font-family: var(--roboto);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.conteudo {
+    width: 100%;
+    max-width: 800px; /* Reduzi para o app ficar mais compacto e elegante */
+    background: rgba(38, 8, 107, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: var(--sombra);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* TÍTULO */
+.conteudo-titulo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.conteudo-titulo img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 16px;
+}
+
+.titulo-principal {
+    font-family: var(--roboto-mono);
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+}
+
+.titulo-secundario {
+    font-size: 16px;
+    color: #8fa0b5;
+    font-weight: 300;
+}
+
+/* CAMPO DE SENHA */
+.conteudo-senha {
+    background: var(--fundo-senha);
+    padding: 20px 24px;
+    border-radius: 12px;
+    border-bottom: 4px solid var(--borda);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.conteudo-senha label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--borda);
+    font-weight: 700;
+}
+
+#campo-senha {
+    background-color: transparent;
+    border: none;
+    color: var(--branco);
+    font-family: var(--roboto-mono);
+    font-size: 32px;
+    width: 100%;
+    font-weight: 700;
+}
+
+#campo-senha:focus {
+    outline: none;
+}
+
+/* PARAMETROS DE PERSONALIZAÇÃO */
+.parametro {
+    background-color: var(--fundo-texto);
+    border: 1px solid rgba(0, 117, 255, 0.3);
+    border-radius: 12px;
+    margin-top: 32px;
+    padding: 32px;
+}
+
+.parametro-titulo {
+    font-family: var(--roboto-mono);
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 12px;
+}
+
+.parametro-coluna__senha {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.parametro-senha {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.parametro-senha__titulo {
+    font-size: 16px;
+    color: #b0c4de;
+    font-weight: 400;
+}
+
+/* BOTÕES DE CONTROLE (+ e -) */
+.parametro-senha-botoes {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.parametro-senha__botao {
+    background: var(--fundo-senha);
+    border: 1px solid var(--borda);
+    color: var(--branco);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.parametro-senha__botao:hover {
+    background: var(--borda);
+    border-color: var(--borda-hover);
+    box-shadow: 0 0 10px rgba(0, 117, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.parametro-senha__botao:active {
+    transform: translateY(0);
+}
+
+.parametro-senha__texto {
+    font-family: var(--roboto-mono);
+    font-size: 24px;
+    font-weight: 700;
+    min-width: 30px;
+    text-align: center;
+}
+
+/* RESPONSIVIDADE (Telas maiores) */
+@media screen and (min-width: 768px) {
+    .parametro-coluna__senha {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .parametro-senha {
+        width: 30%; /* Divide o espaço igualmente entre as 3 colunas */
+    }
+}
